@@ -9,12 +9,10 @@ let package = Package(
         .library(name: "Codecs", targets: ["Codecs"]),
         .library(name: "CodecsLAME", targets: ["CodecsLAME"]),
         .executable(name: "codecs", targets: ["CodecsCLI"]),
-        .executable(name: "codecstest", targets: ["CodecsTestFlows"]),
     ],
     dependencies: [
         .package(url: "https://github.com/leviouwendijk/Media.git", branch: "master"),
         .package(url: "https://github.com/leviouwendijk/Arguments.git", branch: "master"),
-        .package(url: "https://github.com/leviouwendijk/TestFlows.git", branch: "master"),
     ],
     targets: [
         .systemLibrary(name: "CLAME", pkgConfig: "lame", providers: [.brew(["lame"])]),
@@ -34,16 +32,6 @@ let package = Package(
                 "CodecsLAME",
                 .product(name: "MediaTranscoding", package: "Media"),
                 .product(name: "Arguments", package: "Arguments"),
-            ]
-        ),
-        .executableTarget(
-            name: "CodecsTestFlows",
-            dependencies: [
-                "CodecsLAME",
-                .product(name: "MediaTranscoding", package: "Media"),
-                .product(name: "MediaCore", package: "Media"),
-                .product(name: "MediaAV", package: "Media"),
-                .product(name: "TestFlows", package: "TestFlows"),
             ]
         ),
     ],
