@@ -11,8 +11,8 @@ let package = Package(
         .executable(name: "codecs", targets: ["CodecsCLI"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/leviouwendijk/Media.git", branch: "master"),
-        .package(url: "https://github.com/leviouwendijk/Arguments.git", branch: "master"),
+        .package(url: "https://github.com/swift-lco/Media.git", branch: "master"),
+        .package(url: "https://github.com/swift-lco/Arguments.git", branch: "master"),
     ],
     targets: [
         .systemLibrary(name: "CLAME", pkgConfig: "lame", providers: [.brew(["lame"])]),

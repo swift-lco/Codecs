@@ -9,7 +9,7 @@ let package = Package(
         .executable(name: "codecstest", targets: ["CodecsTestFlows"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/leviouwendijk/Media.git", branch: "master"),
+        .package(url: "https://github.com/swift-lco/Media.git", branch: "master"),
         .package(url: "https://github.com/swift-tooling/TestFlows.git", branch: "master"),
         .package(path: ".."),
     ],
